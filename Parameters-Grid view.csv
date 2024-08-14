@@ -1,0 +1,48 @@
+﻿Parameter,Data source,Model giving it as output,Model using it as input,User (from Model using it as input),End user,Type,Time dependant,Has uncertainty,Unit,SSOT location,Storage type
+Bending moment,,Direct stiffness method tool,,,,Output,checked,,Nm,Database,Local Data
+Bond strength reduction,,Corrosion modelling,,,,Output,checked,,,Database,Local Data
+Carbonation depth,Field testing,,"Direct stiffness method tool,Diffusion coefficient calculation","Stef,Karel",,Input,checked,checked,mm,Database,Local Data
+Chance of depassivation,,Depassivation calculation,Optimalisation,Karel,,"Output,Input",checked,checked,,Database,Local Data
+Chloride concentration initial,"Maintenance inspections,Field testing",Diffusion coefficient calculation,"Corrosion modelling,Direct stiffness method tool,Diffusion coefficient calculation,Depassivation calculation","Constantijn,Stef,Karel,Karel",,"Input,Output",checked,checked,wt.-%,Database,Local Data
+Chloride concentration reinforcement,"Maintenance inspections,Field testing",Diffusion coefficient calculation,"Corrosion modelling,Direct stiffness method tool,Diffusion coefficient calculation,Depassivation calculation","Constantijn,Stef,Karel,Karel",,"Input,Output",checked,checked,wt.-%,Database,Local Data
+Chloride concentration surface,"Maintenance inspections,Field testing",Diffusion coefficient calculation,"Corrosion modelling,Direct stiffness method tool,Diffusion coefficient calculation,Depassivation calculation","Constantijn,Stef,Karel,Karel",,"Input,Output",checked,checked,wt.-%,Database,Local Data
+Compressive strength,Field testing,,"Direct stiffness method tool,Diffusion coefficient calculation,Corrosion modelling","Stef,Karel,Constantijn",,Input,checked,checked,MPa,Database,Local Data
+Concrete cover,Concrete cover testing,,"Corrosion modelling,Direct stiffness method tool,Diffusion coefficient calculation","Constantijn,Stef,Karel",,Input,checked,checked,mm,Database,Local Data
+Consequence class,Plans,,Diffusion coefficient calculation,Karel,,Input,,,-,BIM,General Data
+Corrosion degree,,Corrosion modelling,Direct stiffness method tool,Stef,,"Output,Input",checked,checked,%,Database,Local Data
+Corrosion initiation time,,Direct stiffness method tool,,,,Output,,,s,BIM,Local Data
+Corrosion rate,Field testing,Corrosion modelling,"Corrosion modelling,Diffusion coefficient calculation","Constantijn,Karel",,"Input,Output",checked,checked,mm/yr,Database,Local Data
+Cracks,"Visual inspection FM,Crack mapping",,"Direct stiffness method tool,Corrosion modelling,Diffusion coefficient calculation","Stef,Constantijn,Karel",,Input,checked,checked,-,Database,Crack
+Cross-section loss,,Direct stiffness method tool,,,,Output,checked,,,Database,Local Data
+Curvature,,Direct stiffness method tool,Direct stiffness method tool,Stef,,"Input,Output",checked,,1/m,Database,Local Data
+Deflection,Static deflection measurements,Direct stiffness method tool,"Diffusion coefficient calculation,Direct stiffness method tool","Karel,Stef",,"Input,Output",checked,checked,mm,Database,Local Data
+Density,Field testing,,Direct stiffness method tool,Stef,,Input,,,kg/m3,BIM,Local Data
+Diffusion coefficient,Field testing,,Direct stiffness method tool,Stef,,Input,checked,checked,m2/s,Database,Local Data
+Displacement mode shapes,,"Modal analysis,Direct stiffness method tool","Damage identification,Diffusion coefficient calculation","Menno,Karel",,"Input,Output",checked,checked,-,Database,Local Data
+Environmental class,Plans,,,,,Input,,,-,BIM,General Data
+Geometry,"Plans,3D scans",,Direct stiffness method tool,Stef,,Input,,,-,BIM,
+Initial reinforcement,Plans,,Direct stiffness method tool,Stef,,Input,,,,BIM,
+Lifecycle cost,,Optimalisation,,,Facility manager,Output,checked,,,Database,General Data
+Load,Sensor monitoring,,"Direct stiffness method tool,Diffusion coefficient calculation","Stef,Karel",,Input,checked,checked,N,Database,Local Data
+Maintenance costs,,Optimalisation,,,Facility manager,Output,checked,,,Database,General Data
+Moment,,,Direct stiffness method tool,Stef,,Input,checked,checked,Nm,Database,Local Data
+Moment of inertia,,,Direct stiffness method tool,Stef,,"Output,Input",,,m4,BIM,Local Data
+Natural frequencies,,"Modal analysis,Direct stiffness method tool","Damage identification,Diffusion coefficient calculation","Menno,Karel",,"Input,Output",checked,checked,Hz,Database,Local Data
+Neutral axis,,"Modal analysis,Direct stiffness method tool",Damage identification,Menno,,"Output,Input",,,,BIM,Local Data
+Normal forces,,Direct stiffness method tool,,,,Output,checked,,N,Database,Local Data
+Pit depth,Field testing,,"Corrosion modelling,Direct stiffness method tool","Constantijn,Stef",,Input,checked,checked,mm,Database,Local Data
+Prestress,Plans,,Direct stiffness method tool,Stef,,Input,,checked,,BIM,Local Data
+Prestress layout,Plans,,Direct stiffness method tool,Stef,,Input,,,-,BIM,
+Probability of failure,,"Direct stiffness method tool,Optimalisation",,,Facility manager,Output,checked,,,Database,General Data
+Reinforcement layout,Plans,,"Corrosion modelling,Direct stiffness method tool","Constantijn,Stef",,Input,,,-,BIM,
+Reliability index,,"Corrosion modelling,Direct stiffness method tool",,,Facility manager,Output,checked,,,Database,General Data
+Shear forces,,Direct stiffness method tool,,,,Output,checked,,N,Database,Local Data
+Strain,"Sensor monitoring,Static load-testing",Direct stiffness method tool,"Temperature correction,Modal analysis","Buildwise,Menno","Buildwise,Cedric","Input,Output",checked,checked,-,Database,Sensor
+Strain (temperature corrected),,Temperature correction,"Direct stiffness method tool,Modal analysis","Stef,Menno",,"Output,Input",checked,checked,-,Database,Sensor
+Strain mode shapes,,"Modal analysis,Direct stiffness method tool",Damage identification,Menno,,"Input,Output",checked,checked,-,Database,Local Data
+Temperature,Sensor monitoring,,"Temperature correction,Modal analysis","Buildwise,Menno","Buildwise,Cedric",Input,checked,,K,Database,Sensor
+Tensile strength,Field testing,,"Corrosion modelling,Direct stiffness method tool","Constantijn,Stef",,Input,checked,checked,MPa,BIM,Local Data
+Time to depassivation,,Direct stiffness method tool,,,,Output,checked,,s,Database,General Data
+Ultimate strain,,,Direct stiffness method tool,Stef,,Input,,checked,-,BIM,Local Data
+Ultimate tensile strain,,,Direct stiffness method tool,Stef,,Input,,checked,-,BIM,Local Data
+Young modulus,Field testing,,Direct stiffness method tool,Stef,,Input,checked,checked,MPa,Database,Local Data

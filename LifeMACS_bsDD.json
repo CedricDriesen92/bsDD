@@ -1,0 +1,691 @@
+{
+  "OrganizationCode": "bw",
+  "DictionaryCode": "LM",
+  "DictionaryVersion": "0.1.1",
+  "DictionaryName": "LifeMACS",
+  "Status": "Preview",
+  "LanguageIsoCode": "EN",
+  "ModelVersion": "2.0",
+  "Classes": [
+    {
+      "Code": "temperaturesensor",
+      "Name": "Temperature Sensor",
+      "ClassType": "Class",
+      "Definition": "A sensor that measures temperatures.",
+      "CreatorLanguageIsoCode": "EN",
+      "RelatedIfcEntityNamesList": [
+        "IfcSensor"
+      ],
+      "ClassRelations": [
+        {            
+          "RelationType": "IsEqualTo",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcSensorTEMPERATURESENSOR"
+        },
+        {            
+          "RelationType": "IsSimilarTo",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/fiberbragggratingsensor"
+        }
+      ],
+      "ClassProperties": [
+        {
+          "Code": "ts-temperature",
+          "PropertyCode": "temperature",
+          "PropertySet": "sensormeasurements"
+        }
+      ]
+    },
+    {
+      "Code": "strainsensor",
+      "Name": "Strain Sensor",
+      "ClassType": "Class",
+      "Definition": "A sensor that measures one or multiple strain values.",
+      "CreatorLanguageIsoCode": "EN",
+      "RelatedIfcEntityNamesList": [
+        "IfcSensor"
+      ],
+      "ClassRelations": [
+        {            
+          "RelationType": "IsChildOf",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcSensor"
+        },
+        {            
+          "RelationType": "IsSimilarTo",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/fiberbragggratingsensor"
+        }
+      ],
+      "ClassProperties": [
+        {
+          "Code": "ss-strain",
+          "PropertyCode": "strain",
+          "PropertySet": "sensormeasurements"
+        }
+      ]
+    },
+    {
+      "Code": "fiberbragggratingsensor",
+      "Name": "Fiber-Bragg grating sensor",
+      "ClassType": "Class",
+      "Definition": "A sensor type that uses optical wavelength shifting to measure strains and/or temperatures.",
+      "CreatorLanguageIsoCode": "EN",
+      "RelatedIfcEntityNamesList": [
+        "IfcSensor"
+      ],
+      "ClassRelations": [
+        {            
+          "RelationType": "IsChildOf",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcSensor"
+        },
+        {            
+          "RelationType": "IsSimilarTo",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/temperaturesensor"
+        },
+        {            
+          "RelationType": "IsSimilarTo",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/strainsensor"
+        },
+        {            
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/modalanalysis"
+        }
+      ],
+      "ClassProperties": [
+        {
+          "Code": "fbg-strain",
+          "PropertyCode": "strain",
+          "IsRequired": false,
+          "PropertySet": "sensormeasurements"
+        },
+        {
+          "Code": "fbg-temperature",
+          "PropertyCode": "temperature",
+          "IsRequired": false,
+          "PropertySet": "sensormeasurements"
+        }
+      ]
+    },
+    {
+      "Code": "measurement",
+      "Name": "Measurement",
+      "ClassType": "Class",
+      "Definition": "A quantitative determination of a physical property",
+      "CreatorLanguageIsoCode": "EN"
+    },
+    {
+      "Code": "concretedamage",
+      "Name": "Concrete Damage",
+      "ClassType": "Class",
+      "Definition": "Physical representation of localized damage of a concrete element.",
+      "CreatorLanguageIsoCode": "EN",
+      "DocumentReference": "EN 1992-1-1",
+      "ClassRelations": [
+        {
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcBuiltElement"
+        }
+      ]
+    },
+    {
+      "Code": "quantitativemodel",
+      "Name": "Quantitative Model",
+      "ClassType": "Class",
+      "Definition": "A quantitative model, either analytical, computational, or a combination, that uses numerical data to predict outcomes.",
+      "CreatorLanguageIsoCode": "EN"
+    },
+    {
+      "Code": "corrosionmodel",
+      "Name": "Corrosion Model",
+      "ClassType": "Class",
+      "Definition": "A quantitative model for predicting reinforcement corrosion in concrete structures.",
+      "ParentClassCode": "quantitativemodel",
+      "RelatedIfcEntityNamesList": ["IfcStructuralAnalysisModel"],
+      "ClassProperties": [
+        {
+          "Code": "cm-cracklocation",
+          "PropertyCode": "cracklocation",
+          "PropertySet": "corrosioninputs"
+        },
+        {
+          "Code": "cm-discretizedcrack",
+          "PropertyCode": "discretizedcrack",
+          "PropertySet": "corrosioninputs"
+        },
+        {
+          "Code": "cm-reinforcementdiameter",
+          "PropertyCode": "reinforcementdiameter",
+          "PropertySet": "corrosioninputs"
+        },
+        {
+          "Code": "cm-concretecoverthickness",
+          "PropertyCode": "concretecoverthickness",
+          "PropertySet": "corrosioninputs"
+        },
+        {
+          "Code": "cm-pittingfactor",
+          "PropertyCode": "pittingfactor",
+          "PropertySet": "corrosioninputs",
+          "IsRequired": false
+        },
+        {
+          "Code": "cm-equivalentcorrosionlevel",
+          "PropertyCode": "equivalentcorrosionlevel",
+          "PropertySet": "corrosionoutputs"
+        }
+      ], 
+      "ClassRelations": [
+        {            
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/concretedamage"
+        }
+      ]
+    },
+    {
+      "Code": "modalanalysis",
+      "Name": "Modal Analysis Model",
+      "ClassType": "Class",
+      "Definition": "A model to determine dynamic characteristics of structures under vibrational excitation.",
+      "ParentClassCode": "quantitativemodel",
+      "RelatedIfcEntityNamesList": ["IfcStructuralAnalysisModel"],
+      "ClassProperties": [
+        {
+          "Code": "ma-strain",
+          "PropertyCode": "strain",
+          "PropertySet": "sensormeasurements"
+        },
+        {
+          "Code": "ma-temperature",
+          "PropertyCode": "temperature",
+          "PropertySet": "sensormeasurements"
+        },
+        {
+          "Code": "ma-straintemperaturecorrected",
+          "PropertyCode": "straintemperaturecorrected",
+          "PropertySet": "temperaturecorrection"
+        },
+        {
+          "Code": "ma-naturalfrequencies",
+          "PropertyCode": "naturalfrequencies",
+          "PropertySet": "modaloutputs"
+        },
+        {
+          "Code": "ma-displacementmodeshapes",
+          "PropertyCode": "displacementmodeshapes",
+          "PropertySet": "modaloutputs"
+        },
+        {
+          "Code": "ma-strainmodeshapes",
+          "PropertyCode": "strainmodeshapes",
+          "PropertySet": "modaloutputs"
+        }
+      ],
+      "ClassRelations": [
+        {            
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/temperaturesensor"
+        },
+        {            
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/strainsensor"
+        },
+        {            
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/fiberbragggratingsensor"
+        },
+        {            
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/temperaturecorrection"
+        }
+      ]
+    },
+    {
+      "Code": "directstiffnessmethod",
+      "Name": "Direct Stiffness Method",
+      "ClassType": "Class",
+      "Definition": "A computational approach for structural analysis using matrix methods.",
+      "ParentClassCode": "quantitativemodel",
+      "RelatedIfcEntityNamesList": ["IfcStructuralAnalysisModel"],
+      "ClassProperties": [
+        {
+          "Code": "dsm-bendingmoment",
+          "PropertyCode": "bendingmoment",
+          "PropertySet": "structuralinputs"
+        },
+        {
+          "Code": "dsm-shearforces",
+          "PropertyCode": "shearforces",
+          "PropertySet": "structuralinputs"
+        },
+        {
+          "Code": "dsm-deflection",
+          "PropertyCode": "deflection",
+          "PropertySet": "structuraloutputs"
+        },
+        {
+          "Code": "dsm-geometry",
+          "PropertyCode": "geometry",
+          "PropertySet": "structuralgeometry"
+        }
+      ]
+    },    {
+      "Code": "diffusioncoefficientcalculation",
+      "Name": "Diffusion Coefficient Calculation",
+      "ClassType": "Class",
+      "Definition": "A model to calculate the diffusion coefficient in concrete structures.",
+      "ParentClassCode": "quantitativemodel",
+      "RelatedIfcEntityNamesList": ["IfcStructuralAnalysisModel"],
+      "ClassProperties": [
+        {
+          "Code": "dc-compressivestrength",
+          "PropertyCode": "compressivestrength",
+          "PropertySet": "diffusioninputs"
+        },
+        {
+          "Code": "dc-cracklocation",
+          "PropertyCode": "cracklocation",
+          "PropertySet": "diffusioninputs"
+        },
+        {
+          "Code": "dc-concretecoverthickness",
+          "PropertyCode": "concretecoverthickness",
+          "PropertySet": "diffusioninputs"
+        },
+        {
+          "Code": "dc-deflection",
+          "PropertyCode": "deflection",
+          "PropertySet": "diffusioninputs"
+        },
+        {
+          "Code": "dc-chlorideconcentrationinitial",
+          "PropertyCode": "chlorideconcentrationinitial",
+          "PropertySet": "diffusioninputs"
+        },
+        {
+          "Code": "dc-chlorideconcentrationsurface",
+          "PropertyCode": "chlorideconcentrationsurface",
+          "PropertySet": "diffusioninputs"
+        },
+        {
+          "Code": "dc-chlorideconcentrationreinforcement",
+          "PropertyCode": "chlorideconcentrationreinforcement",
+          "PropertySet": "diffusioninputs"
+        },
+        {
+          "Code": "dc-out-chlorideconcentrationinitial",
+          "PropertyCode": "chlorideconcentrationinitial",
+          "PropertySet": "diffusionoutputs"
+        },
+        {
+          "Code": "dc-out-chlorideconcentrationsurface",
+          "PropertyCode": "chlorideconcentrationsurface",
+          "PropertySet": "diffusionoutputs"
+        },
+        {
+          "Code": "dc-out-chlorideconcentrationreinforcement",
+          "PropertyCode": "chlorideconcentrationreinforcement",
+          "PropertySet": "diffusionoutputs"
+        }
+      ],
+      "ClassRelations": [
+        {            
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/directstiffnessmethod"
+        },
+        {            
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/concretedamage"
+        }
+      ]
+    },
+    {
+      "Code": "depassivationcalculation",
+      "Name": "Depassivation Calculation",
+      "ClassType": "Class",
+      "Definition": "A model to calculate the chance of depassivation in reinforced concrete.",
+      "ParentClassCode": "quantitativemodel",
+      "RelatedIfcEntityNamesList": ["IfcStructuralAnalysisModel"],
+      "ClassProperties": [
+        {
+          "Code": "dpc-chlorideconcentrationinitial",
+          "PropertyCode": "chlorideconcentrationinitial",
+          "PropertySet": "depassivationinputs"
+        },
+        {
+          "Code": "dpc-chlorideconcentrationreinforcement",
+          "PropertyCode": "chlorideconcentrationreinforcement",
+          "PropertySet": "depassivationinputs"
+        },
+        {
+          "Code": "dpc-chlorideconcentrationsurface",
+          "PropertyCode": "chlorideconcentrationsurface",
+          "PropertySet": "depassivationinputs"
+        },
+        {
+          "Code": "dpc-chanceofdepassivation",
+          "PropertyCode": "chanceofdepassivation",
+          "PropertySet": "depassivationoutputs"
+        }
+      ],
+      "ClassRelations": [
+        {            
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/diffusioncoefficientcalculation"
+        }
+      ]
+    },
+    {
+      "Code": "repairoptimization",
+      "Name": "Repair Optimization",
+      "ClassType": "Class",
+      "Definition": "A model to optimize repair strategies based on various factors including depassivation chance.",
+      "ParentClassCode": "quantitativemodel",
+      "RelatedIfcEntityNamesList": ["IfcStructuralAnalysisModel"],
+      "ClassProperties": [
+        {
+          "Code": "ro-chanceofdepassivation",
+          "PropertyCode": "chanceofdepassivation",
+          "PropertySet": "optimizationinputs"
+        },
+        {
+          "Code": "ro-lifecyclecost",
+          "PropertyCode": "lifecyclecost",
+          "PropertySet": "optimizationoutputs"
+        },
+        {
+          "Code": "ro-maintenancecosts",
+          "PropertyCode": "maintenancecosts",
+          "PropertySet": "optimizationoutputs"
+        },
+        {
+          "Code": "ro-probabilityoffailure",
+          "PropertyCode": "probabilityoffailure",
+          "PropertySet": "optimizationoutputs"
+        }
+      ],
+      "ClassRelations": [
+        {            
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/depassivationcalculation"
+        }
+      ]
+    },
+    {
+      "Code": "temperaturecorrection",
+      "Name": "Temperature Correction",
+      "ClassType": "Class",
+      "Definition": "A model to correct strain measurements based on temperature fluctuations.",
+      "ParentClassCode": "quantitativemodel",
+      "RelatedIfcEntityNamesList": ["IfcStructuralAnalysisModel"],
+      "ClassProperties": [
+        {
+          "Code": "tc-strain",
+          "PropertyCode": "strain",
+          "PropertySet": "sensormeasurements"
+        },
+        {
+          "Code": "tc-temperature",
+          "PropertyCode": "temperature",
+          "PropertySet": "sensormeasurements"
+        },
+        {
+          "Code": "tc-straintemperaturecorrected",
+          "PropertyCode": "straintemperaturecorrected",
+          "PropertySet": "temperaturecorrection"
+        }
+      ],
+      "ClassRelations": [
+        {            
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/temperaturesensor"
+        },
+        {            
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/strainsensor"
+        },
+        {            
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/fiberbragggratingsensor"
+        },
+        {            
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/modalanalysis"
+        }
+      ]
+    }
+  ],
+  "Properties": [
+    {
+      "Code": "geometry",
+      "Name": "Geometry",
+      "Definition": "The geometrical construction of physical objects.",
+      "DataType": "String",
+      "PropertyRelations": [
+        {
+          "RelatedPropertyUri":  "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/prop/OverallHeight",
+          "RelationType": "HasReference"
+        },
+        {
+          "RelatedPropertyUri":  "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/prop/OverallWidth",
+          "RelationType": "HasReference"
+        },
+        {
+          "RelatedPropertyUri":  "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/prop/OverallThickness",
+          "RelationType": "HasReference"
+        }
+      ]
+    },
+    {
+      "Code": "strain",
+      "Name": "Strain",
+      "Definition": "Strain is the response of a system to an applied stress.",
+      "CreatorLanguageIsoCode": "EN",
+      "DataType": "Real"
+    },
+    {
+      "Code": "temperature",
+      "Name": "Temperature",
+      "Definition": "Temperature is a physical quantity that quantitatively expresses the attribute of hotness or coldness.",
+      "CreatorLanguageIsoCode": "EN",
+      "Units": ["C"],
+      "MinInclusive": 0,
+      "DataType": "Real",
+      "PropertyRelations": [
+        {
+          "RelatedPropertyUri":  "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/prop/Temperature",
+          "RelationType": "IsSimilarTo"
+        }
+      ]
+    },
+    {
+      "Code": "straintemperaturecorrected",
+      "Name": "Temperature-Corrected Strain",
+      "Definition": "Strain measurement corrected for temperature effects.",
+      "DataType": "Real"
+    },
+    {
+      "Code": "compressivestrength",
+      "Name": "Compressive Strength",
+      "Definition": "Compressive strength is a limit state of compressive stress that leads to failure in a material in the manner of ductile failure or brittle failure.",
+      "CreatorLanguageIsoCode": "EN",
+      "DocumentReference": "EN 12390-3",
+      "Units": ["MPa"]
+    },
+    {
+      "Code": "environmentalclass",
+      "Name": "Environmental Class",
+      "Definition": "A classification system used to categorize the environmental conditions to which a structure or its components will be exposed during its service life",
+      "CreatorLanguageIsoCode": "EN",
+      "DocumentReference": "EN 206-1:2001",
+      "AllowedValues": [
+        {
+          "Code": "xd1",
+          "Value": "XD1"
+        },
+        {
+          "Code": "xd2",
+          "Value": "XD2"
+        },
+        {
+          "Code": "xd3",
+          "Value": "XD3"
+        },
+        {
+          "Code": "xs1",
+          "Value": "XS1"
+        },
+        {
+          "Code": "xs2",
+          "Value": "XS2"
+        },
+        {
+          "Code": "xs3",
+          "Value": "XS3"
+        }
+      ]
+    },
+    {
+      "Code": "concretecoverthickness",
+      "Name": "Concrete Cover Thickness",
+      "Definition": "Thickness of the concrete cover over the reinforcement.",
+      "DataType": "Real",
+      "Units": ["mm"]
+    },
+    {
+      "Code": "chlorideconcentrationinitial",
+      "Name": "Initial Chloride Concentration",
+      "Definition": "Initial concentration of chloride in the concrete.",
+      "DataType": "Real",
+      "Units": ["%"]
+    },
+    {
+      "Code": "chlorideconcentrationsurface",
+      "Name": "Surface Chloride Concentration",
+      "Definition": "Concentration of chloride at the surface of the concrete.",
+      "DataType": "Real",
+      "Units": ["%"]
+    },
+    {
+      "Code": "chlorideconcentrationreinforcement",
+      "Name": "Chloride Concentration at Reinforcement",
+      "Definition": "Chloride content at the reinforcement level in concrete.",
+      "DataType": "Real",
+      "Units": ["%"]
+    },
+    {
+      "Code": "chanceofdepassivation",
+      "Name": "Chance of Depassivation",
+      "Definition": "Probability of depassivation occurring in the reinforcement.",
+      "DataType": "Real",
+      "Units": ["%"]
+    },
+    {
+      "Code": "lifecyclecost",
+      "Name": "Life Cycle Cost",
+      "Definition": "Total cost over the life cycle of the structure, including initial, operational, and end-of-life costs.",
+      "DataType": "Real",
+      "Units": ["EUR"]
+    },
+    {
+      "Code": "maintenancecosts",
+      "Name": "Maintenance Costs",
+      "Definition": "Costs associated with maintaining the structure over its lifetime.",
+      "DataType": "Real",
+      "Units": ["EUR"]
+    },
+    {
+      "Code": "probabilityoffailure",
+      "Name": "Probability of Failure",
+      "Definition": "Likelihood of structural failure based on current conditions and predictions.",
+      "DataType": "Real",
+      "Units": ["%"]
+    },
+    {
+      "Code": "corrosionrate",
+      "Name": "Corrosion Rate",
+      "Definition": "Rate of corrosion progression in reinforcement.",
+      "DataType": "Real"
+    },
+    {
+      "Code": "bondstrengthreduction",
+      "Name": "Bond Strength Reduction",
+      "Definition": "Reduction in bond strength between concrete and reinforcement due to corrosion.",
+      "DataType": "Real",
+      "Units": ["%"]
+    },
+    {
+      "Code": "corrosiondegree",
+      "Name": "Corrosion Degree",
+      "Definition": "Extent of corrosion damage in reinforcement.",
+      "DataType": "Real",
+      "Units": ["%"]
+    },
+    {
+      "Code": "naturalfrequencies",
+      "Name": "Natural Frequencies",
+      "Definition": "Frequencies at which a structure tends to oscillate in the absence of damping.",
+      "DataType": "Real",
+      "Units": ["Hz"]
+    },
+    {
+      "Code": "displacementmodeshapes",
+      "Name": "Displacement Mode Shapes",
+      "Definition": "Patterns of displacement corresponding to natural frequencies of a structure."
+    },
+    {
+      "Code": "strainmodeshapes",
+      "Name": "Strain Mode Shapes",
+      "Definition": "Patterns of strain corresponding to natural frequencies of a structure."
+    },
+    {
+      "Code": "bendingmoment",
+      "Name": "Bending Moment",
+      "Definition": "Internal force causing bending in a structural element.",
+      "DataType": "Real",
+      "Units": ["Nm"]
+    },
+    {
+      "Code": "shearforces",
+      "Name": "Shear Forces",
+      "Definition": "Internal forces acting perpendicular to the axis of a structural element.",
+      "DataType": "Real",
+      "Units": ["N"]
+    },
+    {
+      "Code": "deflection",
+      "Name": "Deflection",
+      "Definition": "Displacement of a structural element under load.",
+      "DataType": "Real",
+      "Units": ["mm"]
+    },
+    {
+      "Code": "cracklocation",
+      "Name": "Crack Location",
+      "Definition": "Relative 2D coordinates of crack location on the underside of the concrete element.",
+      "DataType": "String"
+    },
+    {
+      "Code": "discretizedcrack",
+      "Name": "Discretized Crack",
+      "Definition": "Discretized representation of the crack, typically with around 20 cm discretizations and crack width for each section.",
+      "DataType": "String"
+    },
+    {
+      "Code": "reinforcementdiameter",
+      "Name": "Reinforcement Diameter",
+      "Definition": "Diameter of the reinforcement bar in the concrete element.",
+      "DataType": "Real",
+      "Units": ["mm"]
+    },
+    {
+      "Code": "pittingfactor",
+      "Name": "Pitting Factor",
+      "Definition": "Factor representing the localized corrosion or pitting in the reinforcement.",
+      "DataType": "Real"
+    },
+    {
+      "Code": "equivalentcorrosionlevel",
+      "Name": "Equivalent Corrosion Level",
+      "Definition": "Calculated level of corrosion based on input parameters, representing the overall corrosion state of the reinforcement.",
+      "DataType": "Real",
+      "Units": ["%"]
+    }
+  ]
+}
