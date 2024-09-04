@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ids:ids xmlns:ids="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+  <ids:info>
+    <ids:title>LifeMACS Information Delivery Specification</ids:title>
+    <ids:copyright>buildingSMART</ids:copyright>
+    <ids:version>0.1.2</ids:version>
+    <ids:description>IDS for LifeMACS classes and properties</ids:description>
+    <ids:author>cedric.driesen@buildwise.be</ids:author>
+    <ids:date>2024-08-27</ids:date>
+    <ids:purpose>Ensure correct implementation of LifeMACS classes and properties</ids:purpose>
+  </ids:info>
+  
+  <ids:specifications>
+    <!-- Temperature Sensor -->
+    <ids:specification name="Temperature Sensor" ifcVersion="IFC4">
+      <ids:applicability>
+        <ids:entity>
+          <ids:name>
+            <ids:simpleValue>IFCSENSOR</ids:simpleValue>
+          </ids:name>
+        </ids:entity>
+        <ids:classification>
+          <ids:value>
+            <ids:simpleValue>temperaturesensor</ids:simpleValue>
+          </ids:value>
+          <ids:system>
+            <ids:simpleValue>LifeMACS</ids:simpleValue>
+          </ids:system>
+        </ids:classification>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property dataType="IFCREAL" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/temperature">
+          <ids:propertySet>
+            <ids:simpleValue>sensormeasurements</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>temperature</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+      </ids:requirements>
+    </ids:specification>
+    
+    <!-- Strain Sensor -->
+    <ids:specification name="Strain Sensor" ifcVersion="IFC4">
+      <ids:applicability>
+        <ids:entity>
+          <ids:name>
+            <ids:simpleValue>IFCSENSOR</ids:simpleValue>
+          </ids:name>
+        </ids:entity>
+        <ids:classification>
+          <ids:value>
+            <ids:simpleValue>strainsensor</ids:simpleValue>
+          </ids:value>
+          <ids:system>
+            <ids:simpleValue>LifeMACS</ids:simpleValue>
+          </ids:system>
+        </ids:classification>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property dataType="IFCREAL" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/strain">
+          <ids:propertySet>
+            <ids:simpleValue>sensormeasurements</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>strain</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+      </ids:requirements>
+    </ids:specification>
+    
+    <!-- Fiber-Bragg grating sensor -->
+    <ids:specification name="Fiber-Bragg grating sensor" ifcVersion="IFC4">
+      <ids:applicability>
+        <ids:entity>
+          <ids:name>
+            <ids:simpleValue>IFCSENSOR</ids:simpleValue>
+          </ids:name>
+        </ids:entity>
+        <ids:classification>
+          <ids:value>
+            <ids:simpleValue>fiberbragggratingsensor</ids:simpleValue>
+          </ids:value>
+          <ids:system>
+            <ids:simpleValue>LifeMACS</ids:simpleValue>
+          </ids:system>
+        </ids:classification>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property dataType="IFCREAL" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/strain">
+          <ids:propertySet>
+            <ids:simpleValue>sensormeasurements</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>strain</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+        <ids:property dataType="IFCREAL" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/temperature">
+          <ids:propertySet>
+            <ids:simpleValue>sensormeasurements</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>temperature</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+      </ids:requirements>
+    </ids:specification>
+    
+    <!-- Concrete Damage -->
+    <ids:specification name="Concrete Damage" ifcVersion="IFC4">
+      <ids:applicability>
+        <ids:entity>
+          <ids:name>
+            <ids:simpleValue>IFCBUILTELEMENT</ids:simpleValue>
+          </ids:name>
+        </ids:entity>
+        <ids:classification>
+          <ids:value>
+            <ids:simpleValue>concretedamage</ids:simpleValue>
+          </ids:value>
+          <ids:system>
+            <ids:simpleValue>LifeMACS</ids:simpleValue>
+          </ids:system>
+        </ids:classification>
+      </ids:applicability>
+    </ids:specification>
+    
+    <!-- Corrosion Model -->
+    <ids:specification name="Corrosion Model" ifcVersion="IFC4">
+      <ids:applicability>
+        <ids:entity>
+          <ids:name>
+            <ids:simpleValue>IFCSTRUCTURALANALYSISMODEL</ids:simpleValue>
+          </ids:name>
+        </ids:entity>
+        <ids:classification>
+          <ids:value>
+            <ids:simpleValue>corrosionmodel</ids:simpleValue>
+          </ids:value>
+          <ids:system>
+            <ids:simpleValue>LifeMACS</ids:simpleValue>
+          </ids:system>
+        </ids:classification>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property dataType="IFCTEXT" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/cracklocation">
+          <ids:propertySet>
+            <ids:simpleValue>corrosioninputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>cracklocation</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+        <ids:property dataType="IFCTEXT" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/discretizedcrack">
+          <ids:propertySet>
+            <ids:simpleValue>corrosioninputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>discretizedcrack</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+        <ids:property dataType="IFCLENGTHMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/reinforcementdiameter">
+          <ids:propertySet>
+            <ids:simpleValue>corrosioninputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>reinforcementdiameter</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCLENGTHMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/concretecoverthickness">
+          <ids:propertySet>
+            <ids:simpleValue>corrosioninputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>concretecoverthickness</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCREAL" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/pittingfactor">
+          <ids:propertySet>
+            <ids:simpleValue>corrosioninputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>pittingfactor</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+        <ids:property dataType="IFCRATIOMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/equivalentcorrosionlevel">
+          <ids:propertySet>
+            <ids:simpleValue>corrosionoutputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>equivalentcorrosionlevel</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+              <xs:maxInclusive value="100"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+      </ids:requirements>
+    </ids:specification>
+    
+    <!-- Modal Analysis Model -->
+    <ids:specification name="Modal Analysis Model" ifcVersion="IFC4">
+      <ids:applicability>
+        <ids:entity>
+          <ids:name>
+            <ids:simpleValue>IFCSTRUCTURALANALYSISMODEL</ids:simpleValue>
+          </ids:name>
+        </ids:entity>
+        <ids:classification>
+          <ids:value>
+            <ids:simpleValue>modalanalysis</ids:simpleValue>
+          </ids:value>
+          <ids:system>
+            <ids:simpleValue>LifeMACS</ids:simpleValue>
+          </ids:system>
+        </ids:classification>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property dataType="IFCREAL" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/strain">
+          <ids:propertySet>
+            <ids:simpleValue>sensormeasurements</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>strain</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+        <ids:property dataType="IFCREAL" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/temperature">
+          <ids:propertySet>
+            <ids:simpleValue>sensormeasurements</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>temperature</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCREAL" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/straintemperaturecorrected">
+          <ids:propertySet>
+            <ids:simpleValue>temperaturecorrection</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>straintemperaturecorrected</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+        <ids:property dataType="IFCREAL" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/naturalfrequencies">
+          <ids:propertySet>
+            <ids:simpleValue>modaloutputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>naturalfrequencies</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCTEXT" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/displacementmodeshapes">
+          <ids:propertySet>
+            <ids:simpleValue>modaloutputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>displacementmodeshapes</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+        <ids:property dataType="IFCTEXT" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/strainmodeshapes">
+          <ids:propertySet>
+            <ids:simpleValue>modaloutputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>strainmodeshapes</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+      </ids:requirements>
+    </ids:specification>
+    
+    <!-- Direct Stiffness Method -->
+    <ids:specification name="Direct Stiffness Method" ifcVersion="IFC4">
+      <ids:applicability>
+        <ids:entity>
+          <ids:name>
+            <ids:simpleValue>IFCSTRUCTURALANALYSISMODEL</ids:simpleValue>
+          </ids:name>
+        </ids:entity>
+        <ids:classification>
+          <ids:value>
+            <ids:simpleValue>directstiffnessmethod</ids:simpleValue>
+          </ids:value>
+          <ids:system>
+            <ids:simpleValue>LifeMACS</ids:simpleValue>
+          </ids:system>
+        </ids:classification>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property dataType="IFCPLANEANGLEMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/compressivestrength">
+          <ids:propertySet>
+            <ids:simpleValue>structuralinputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>compressivestrength</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCTEXT" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/cracklocation">
+          <ids:propertySet>
+            <ids:simpleValue>structuralinputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>cracklocation</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+        <ids:property dataType="IFCLENGTHMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/concretecoverthickness">
+          <ids:propertySet>
+            <ids:simpleValue>structuralinputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>concretecoverthickness</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCLENGTHMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/deflection">
+          <ids:propertySet>
+            <ids:simpleValue>structuralinputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>deflection</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCRATIOMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/chlorideconcentrationreinforcement">
+          <ids:propertySet>
+            <ids:simpleValue>structuralinputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>chlorideconcentrationreinforcement</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+              <xs:maxInclusive value="100"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCRATIOMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/corrosiondegree">
+          <ids:propertySet>
+            <ids:simpleValue>structuralinputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>corrosiondegree</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+              <xs:maxInclusive value="100"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCTEXT" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/geometry">
+          <ids:propertySet>
+            <ids:simpleValue>structuralgeometry</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>geometry</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+        <ids:property dataType="IFCTEXT" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/reinforcementlayout">
+          <ids:propertySet>
+            <ids:simpleValue>structuralinputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>reinforcementlayout</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+        <ids:property dataType="IFCFORCEMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/load">
+          <ids:propertySet>
+            <ids:simpleValue>structuralinputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>load</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCTORQUEMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/bendingmoment">
+          <ids:propertySet>
+            <ids:simpleValue>structuraloutputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>bendingmoment</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+        <ids:property dataType="IFCFORCEMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/shearforces">
+          <ids:propertySet>
+            <ids:simpleValue>structuraloutputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>shearforces</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+        <ids:property dataType="IFCLENGTHMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/deflection">
+          <ids:propertySet>
+            <ids:simpleValue>structuraloutputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>deflection</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCFREQUENCYMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/naturalfrequencies">
+          <ids:propertySet>
+            <ids:simpleValue>structuraloutputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>naturalfrequencies</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCTEXT" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/displacementmodeshapes">
+          <ids:propertySet>
+            <ids:simpleValue>structuraloutputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>displacementmodeshapes</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+        <ids:property dataType="IFCTEXT" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/strainmodeshapes">
+          <ids:propertySet>
+            <ids:simpleValue>structuraloutputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>strainmodeshapes</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+        <ids:property dataType="IFCRATIOMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/probabilityoffailure">
+          <ids:propertySet>
+            <ids:simpleValue>structuraloutputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>probabilityoffailure</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+              <xs:maxInclusive value="100"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+      </ids:requirements>
+    </ids:specification>
+    
+    <!-- Diffusion Coefficient Calculation -->
+    <ids:specification name="Diffusion Coefficient Calculation" ifcVersion="IFC4">
+      <ids:applicability>
+        <ids:entity>
+          <ids:name>
+            <ids:simpleValue>IFCSTRUCTURALANALYSISMODEL</ids:simpleValue>
+          </ids:name>
+        </ids:entity>
+        <ids:classification>
+          <ids:value>
+            <ids:simpleValue>diffusioncoefficientcalculation</ids:simpleValue>
+          </ids:value>
+          <ids:system>
+            <ids:simpleValue>LifeMACS</ids:simpleValue>
+          </ids:system>
+        </ids:classification>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property dataType="IFCPLANEANGLEMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/compressivestrength">
+          <ids:propertySet>
+            <ids:simpleValue>diffusioninputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>compressivestrength</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCTEXT" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/cracklocation">
+          <ids:propertySet>
+            <ids:simpleValue>diffusioninputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>cracklocation</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+        <ids:property dataType="IFCLENGTHMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/concretecoverthickness">
+          <ids:propertySet>
+            <ids:simpleValue>diffusioninputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>concretecoverthickness</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCLENGTHMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/deflection">
+          <ids:propertySet>
+            <ids:simpleValue>diffusioninputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>deflection</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCRATIOMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/chlorideconcentrationinitial">
+          <ids:propertySet>
+            <ids:simpleValue>diffusioninputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>chlorideconcentrationinitial</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+              <xs:maxInclusive value="100"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCRATIOMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/chlorideconcentrationsurface">
+          <ids:propertySet>
+            <ids:simpleValue>diffusioninputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>chlorideconcentrationsurface</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+              <xs:maxInclusive value="100"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCRATIOMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/chlorideconcentrationreinforcement">
+          <ids:propertySet>
+            <ids:simpleValue>diffusioninputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>chlorideconcentrationreinforcement</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+              <xs:maxInclusive value="100"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCLENGTHMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/carbonationdepth">
+          <ids:propertySet>
+            <ids:simpleValue>diffusioninputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>carbonationdepth</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCFREQUENCYMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/naturalfrequencies">
+          <ids:propertySet>
+            <ids:simpleValue>diffusioninputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>naturalfrequencies</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCTEXT" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/displacementmodeshapes">
+          <ids:propertySet>
+            <ids:simpleValue>diffusioninputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>displacementmodeshapes</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+        <ids:property dataType="IFCLABEL" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/consequenceclass">
+          <ids:propertySet>
+            <ids:simpleValue>diffusioninputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>consequenceclass</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="CC1"/>
+              <xs:enumeration value="CC2"/>
+              <xs:enumeration value="CC3"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCREAL" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/corrosionrate">
+          <ids:propertySet>
+            <ids:simpleValue>diffusioninputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>corrosionrate</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCFORCEMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/load">
+          <ids:propertySet>
+            <ids:simpleValue>diffusioninputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>load</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCRATIOMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/chlorideconcentrationinitial">
+          <ids:propertySet>
+            <ids:simpleValue>diffusionoutputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>chlorideconcentrationinitial</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+              <xs:maxInclusive value="100"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCRATIOMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/chlorideconcentrationsurface">
+          <ids:propertySet>
+            <ids:simpleValue>diffusionoutputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>chlorideconcentrationsurface</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+              <xs:maxInclusive value="100"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCRATIOMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/chlorideconcentrationreinforcement">
+          <ids:propertySet>
+            <ids:simpleValue>diffusionoutputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>chlorideconcentrationreinforcement</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+              <xs:maxInclusive value="100"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCREAL" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/diffusioncoefficient">
+          <ids:propertySet>
+            <ids:simpleValue>diffusionoutputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>diffusioncoefficient</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+      </ids:requirements>
+    </ids:specification>
+    
+    <!-- Depassivation Calculation -->
+    <ids:specification name="Depassivation Calculation" ifcVersion="IFC4">
+      <ids:applicability>
+        <ids:entity>
+          <ids:name>
+            <ids:simpleValue>IFCSTRUCTURALANALYSISMODEL</ids:simpleValue>
+          </ids:name>
+        </ids:entity>
+        <ids:classification>
+          <ids:value>
+            <ids:simpleValue>depassivationcalculation</ids:simpleValue>
+          </ids:value>
+          <ids:system>
+            <ids:simpleValue>LifeMACS</ids:simpleValue>
+          </ids:system>
+        </ids:classification>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property dataType="IFCRATIOMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/chlorideconcentrationinitial">
+          <ids:propertySet>
+            <ids:simpleValue>depassivationinputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>chlorideconcentrationinitial</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+              <xs:maxInclusive value="100"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCRATIOMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/chlorideconcentrationreinforcement">
+          <ids:propertySet>
+            <ids:simpleValue>depassivationinputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>chlorideconcentrationreinforcement</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+              <xs:maxInclusive value="100"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCRATIOMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/chlorideconcentrationsurface">
+          <ids:propertySet>
+            <ids:simpleValue>depassivationinputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>chlorideconcentrationsurface</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+              <xs:maxInclusive value="100"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCRATIOMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/chanceofdepassivation">
+          <ids:propertySet>
+            <ids:simpleValue>depassivationoutputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>chanceofdepassivation</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+              <xs:maxInclusive value="100"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+      </ids:requirements>
+    </ids:specification>
+    
+    <!-- Repair Optimization -->
+    <ids:specification name="Repair Optimization" ifcVersion="IFC4">
+      <ids:applicability>
+        <ids:entity>
+          <ids:name>
+            <ids:simpleValue>IFCSTRUCTURALANALYSISMODEL</ids:simpleValue>
+          </ids:name>
+        </ids:entity>
+        <ids:classification>
+          <ids:value>
+            <ids:simpleValue>repairoptimization</ids:simpleValue>
+          </ids:value>
+          <ids:system>
+            <ids:simpleValue>LifeMACS</ids:simpleValue>
+          </ids:system>
+        </ids:classification>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property dataType="IFCRATIOMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/chanceofdepassivation">
+          <ids:propertySet>
+            <ids:simpleValue>optimizationinputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>chanceofdepassivation</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+              <xs:maxInclusive value="100"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCMONETARYMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/lifecyclecost">
+          <ids:propertySet>
+            <ids:simpleValue>optimizationoutputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>lifecyclecost</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCMONETARYMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/maintenancecosts">
+          <ids:propertySet>
+            <ids:simpleValue>optimizationoutputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>maintenancecosts</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCRATIOMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/probabilityoffailure">
+          <ids:propertySet>
+            <ids:simpleValue>optimizationoutputs</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>probabilityoffailure</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+              <xs:maxInclusive value="100"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+      </ids:requirements>
+    </ids:specification>
+    
+    <!-- Temperature Correction -->
+    <ids:specification name="Temperature Correction" ifcVersion="IFC4">
+      <ids:applicability>
+        <ids:entity>
+          <ids:name>
+            <ids:simpleValue>IFCSTRUCTURALANALYSISMODEL</ids:simpleValue>
+          </ids:name>
+        </ids:entity>
+        <ids:classification>
+          <ids:value>
+            <ids:simpleValue>temperaturecorrection</ids:simpleValue>
+          </ids:value>
+          <ids:system>
+            <ids:simpleValue>LifeMACS</ids:simpleValue>
+          </ids:system>
+        </ids:classification>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property dataType="IFCREAL" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/strain">
+          <ids:propertySet>
+            <ids:simpleValue>sensormeasurements</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>strain</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+        <ids:property dataType="IFCTHERMODYNAMICTEMPERATUREMEASURE" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/temperature">
+          <ids:propertySet>
+            <ids:simpleValue>sensormeasurements</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>temperature</ids:simpleValue>
+          </ids:name>
+          <ids:value>
+            <xs:restriction base="xs:double">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </ids:value>
+        </ids:property>
+        <ids:property dataType="IFCREAL" uri="https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/prop/straintemperaturecorrected">
+          <ids:propertySet>
+            <ids:simpleValue>temperaturecorrection</ids:simpleValue>
+          </ids:propertySet>
+          <ids:name>
+            <ids:simpleValue>straintemperaturecorrected</ids:simpleValue>
+          </ids:name>
+        </ids:property>
+      </ids:requirements>
+    </ids:specification>
+  </ids:specifications>
+</ids:ids>

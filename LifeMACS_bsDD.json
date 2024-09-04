@@ -1,7 +1,7 @@
 {
   "OrganizationCode": "bw",
   "DictionaryCode": "LM",
-  "DictionaryVersion": "0.1.1",
+  "DictionaryVersion": "0.1.2",
   "DictionaryName": "LifeMACS",
   "Status": "Preview",
   "LanguageIsoCode": "EN",
@@ -22,8 +22,12 @@
           "RelatedClassUri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcSensorTEMPERATURESENSOR"
         },
         {            
+          "RelationType": "IsChildOf",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcSensor"
+        },
+        {            
           "RelationType": "IsSimilarTo",
-          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/fiberbragggratingsensor"
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/fiberbragggratingsensor"
         }
       ],
       "ClassProperties": [
@@ -50,7 +54,7 @@
         },
         {            
           "RelationType": "IsSimilarTo",
-          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/fiberbragggratingsensor"
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/fiberbragggratingsensor"
         }
       ],
       "ClassProperties": [
@@ -77,15 +81,15 @@
         },
         {            
           "RelationType": "IsSimilarTo",
-          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/temperaturesensor"
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/temperaturesensor"
         },
         {            
           "RelationType": "IsSimilarTo",
-          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/strainsensor"
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/strainsensor"
         },
         {            
           "RelationType": "HasReference",
-          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/modalanalysis"
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/modalanalysis"
         }
       ],
       "ClassProperties": [
@@ -174,7 +178,7 @@
       "ClassRelations": [
         {            
           "RelationType": "HasReference",
-          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/concretedamage"
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/concretedamage"
         }
       ]
     },
@@ -220,19 +224,19 @@
       "ClassRelations": [
         {            
           "RelationType": "HasReference",
-          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/temperaturesensor"
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/temperaturesensor"
         },
         {            
           "RelationType": "HasReference",
-          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/strainsensor"
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/strainsensor"
         },
         {            
           "RelationType": "HasReference",
-          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/fiberbragggratingsensor"
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/fiberbragggratingsensor"
         },
         {            
           "RelationType": "HasReference",
-          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/temperaturecorrection"
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/temperaturecorrection"
         }
       ]
     },
@@ -245,27 +249,98 @@
       "RelatedIfcEntityNamesList": ["IfcStructuralAnalysisModel"],
       "ClassProperties": [
         {
-          "Code": "dsm-bendingmoment",
-          "PropertyCode": "bendingmoment",
+          "Code": "dsm-compressivestrength",
+          "PropertyCode": "compressivestrength",
           "PropertySet": "structuralinputs"
         },
         {
-          "Code": "dsm-shearforces",
-          "PropertyCode": "shearforces",
+          "Code": "dsm-cracklocation",
+          "PropertyCode": "cracklocation",
+          "PropertySet": "structuralinputs"
+        },
+        {
+          "Code": "dsm-concretecoverthickness",
+          "PropertyCode": "concretecoverthickness",
           "PropertySet": "structuralinputs"
         },
         {
           "Code": "dsm-deflection",
           "PropertyCode": "deflection",
-          "PropertySet": "structuraloutputs"
+          "PropertySet": "structuralinputs"
+        },
+        {
+          "Code": "dsm-chlorideconcentrationreinforcement",
+          "PropertyCode": "chlorideconcentrationreinforcement",
+          "PropertySet": "structuralinputs"
+        },
+        {
+          "Code": "dsm-corrosiondegree",
+          "PropertyCode": "corrosiondegree",
+          "PropertySet": "structuralinputs"
         },
         {
           "Code": "dsm-geometry",
           "PropertyCode": "geometry",
           "PropertySet": "structuralgeometry"
+        },
+        {
+          "Code": "dsm-reinforcementlayout",
+          "PropertyCode": "reinforcementlayout",
+          "PropertySet": "structuralinputs"
+        },
+        {
+          "Code": "dsm-load",
+          "PropertyCode": "load",
+          "PropertySet": "structuralinputs"
+        },
+        {
+          "Code": "dsm-bendingmoment",
+          "PropertyCode": "bendingmoment",
+          "PropertySet": "structuraloutputs"
+        },
+        {
+          "Code": "dsm-shearforces",
+          "PropertyCode": "shearforces",
+          "PropertySet": "structuraloutputs"
+        },
+        {
+          "Code": "dsm-out-deflection",
+          "PropertyCode": "deflection",
+          "PropertySet": "structuraloutputs"
+        },
+        {
+          "Code": "dsm-naturalfrequencies",
+          "PropertyCode": "naturalfrequencies",
+          "PropertySet": "structuraloutputs"
+        },
+        {
+          "Code": "dsm-displacementmodeshapes",
+          "PropertyCode": "displacementmodeshapes",
+          "PropertySet": "structuraloutputs"
+        },
+        {
+          "Code": "dsm-strainmodeshapes",
+          "PropertyCode": "strainmodeshapes",
+          "PropertySet": "structuraloutputs"
+        },
+        {
+          "Code": "dsm-probabilityoffailure",
+          "PropertyCode": "probabilityoffailure",
+          "PropertySet": "structuraloutputs"
+        }
+      ],
+      "ClassRelations": [
+        {
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/corrosionmodel"
+        },
+        {
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/modalanalysis"
         }
       ]
-    },    {
+    },  
+    {
       "Code": "diffusioncoefficientcalculation",
       "Name": "Diffusion Coefficient Calculation",
       "ClassType": "Class",
@@ -309,6 +384,36 @@
           "PropertySet": "diffusioninputs"
         },
         {
+          "Code": "dc-carbonationdepth",
+          "PropertyCode": "carbonationdepth",
+          "PropertySet": "diffusioninputs"
+        },
+        {
+          "Code": "dc-naturalfrequencies",
+          "PropertyCode": "naturalfrequencies",
+          "PropertySet": "diffusioninputs"
+        },
+        {
+          "Code": "dc-displacementmodeshapes",
+          "PropertyCode": "displacementmodeshapes",
+          "PropertySet": "diffusioninputs"
+        },
+        {
+          "Code": "dc-consequenceclass",
+          "PropertyCode": "consequenceclass",
+          "PropertySet": "diffusioninputs"
+        },
+        {
+          "Code": "dc-corrosionrate",
+          "PropertyCode": "corrosionrate",
+          "PropertySet": "diffusioninputs"
+        },
+        {
+          "Code": "dc-load",
+          "PropertyCode": "load",
+          "PropertySet": "diffusioninputs"
+        },
+        {
           "Code": "dc-out-chlorideconcentrationinitial",
           "PropertyCode": "chlorideconcentrationinitial",
           "PropertySet": "diffusionoutputs"
@@ -322,16 +427,29 @@
           "Code": "dc-out-chlorideconcentrationreinforcement",
           "PropertyCode": "chlorideconcentrationreinforcement",
           "PropertySet": "diffusionoutputs"
+        },
+        {
+          "Code": "dc-diffusioncoefficient",
+          "PropertyCode": "diffusioncoefficient",
+          "PropertySet": "diffusionoutputs"
         }
       ],
       "ClassRelations": [
         {            
           "RelationType": "HasReference",
-          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/directstiffnessmethod"
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/directstiffnessmethod"
         },
         {            
           "RelationType": "HasReference",
-          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/concretedamage"
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/concretedamage"
+        },
+        {
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/modalanalysis"
+        },
+        {
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/corrosionmodel"
         }
       ]
     },
@@ -367,7 +485,7 @@
       "ClassRelations": [
         {            
           "RelationType": "HasReference",
-          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/diffusioncoefficientcalculation"
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/diffusioncoefficientcalculation"
         }
       ]
     },
@@ -403,7 +521,7 @@
       "ClassRelations": [
         {            
           "RelationType": "HasReference",
-          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/depassivationcalculation"
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/depassivationcalculation"
         }
       ]
     },
@@ -434,19 +552,19 @@
       "ClassRelations": [
         {            
           "RelationType": "HasReference",
-          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/temperaturesensor"
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/temperaturesensor"
         },
         {            
           "RelationType": "HasReference",
-          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/strainsensor"
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/strainsensor"
         },
         {            
           "RelationType": "HasReference",
-          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/fiberbragggratingsensor"
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/fiberbragggratingsensor"
         },
         {            
           "RelationType": "HasReference",
-          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.1/class/modalanalysis"
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/modalanalysis"
         }
       ]
     }
@@ -686,6 +804,52 @@
       "Definition": "Calculated level of corrosion based on input parameters, representing the overall corrosion state of the reinforcement.",
       "DataType": "Real",
       "Units": ["%"]
+    },
+    {
+      "Code": "carbonationdepth",
+      "Name": "Carbonation Depth",
+      "Definition": "The depth of carbonation in concrete, which can affect its properties and durability.",
+      "DataType": "Real",
+      "Units": ["mm"]
+    },
+    {
+      "Code": "consequenceclass",
+      "Name": "Consequence Class",
+      "Definition": "A classification of the consequences of failure for a structure or structural element.",
+      "DataType": "String",
+      "AllowedValues": [
+        {
+          "Code": "cc1",
+          "Value": "CC1"
+        },
+        {
+          "Code": "cc2",
+          "Value": "CC2"
+        },
+        {
+          "Code": "cc3",
+          "Value": "CC3"
+        }
+      ]
+    },
+    {
+      "Code": "load",
+      "Name": "Load",
+      "Definition": "The force applied to a structure or structural element.",
+      "DataType": "Real",
+      "Units": ["N"]
+    },
+    {
+      "Code": "diffusioncoefficient",
+      "Name": "Diffusion Coefficient",
+      "Definition": "A measure of the rate at which particles or molecules diffuse through a medium.",
+      "DataType": "Real"
+    },
+    {
+      "Code": "reinforcementlayout",
+      "Name": "Reinforcement Layout",
+      "Definition": "The arrangement and configuration of reinforcement in a concrete structure.",
+      "DataType": "String"
     }
   ]
 }
