@@ -112,7 +112,29 @@
       "Name": "Measurement",
       "ClassType": "Class",
       "Definition": "A quantitative determination of a physical property",
-      "CreatorLanguageIsoCode": "EN"
+      "CreatorLanguageIsoCode": "EN",
+      "ClassProperties": [
+        {
+          "Code": "m-value",
+          "PropertyCode": "value",
+          "PropertySet": "measurementdetails"
+        },
+        {
+          "Code": "m-uncertainty",
+          "PropertyCode": "uncertainty",
+          "PropertySet": "measurementdetails"
+        },
+        {
+          "Code": "m-timestamp",
+          "PropertyCode": "timestamp",
+          "PropertySet": "measurementdetails"
+        },
+        {
+          "Code": "m-unit",
+          "PropertyCode": "unit",
+          "PropertySet": "measurementdetails"
+        }
+      ]
     },
     {
       "Code": "concretedamage",
@@ -125,6 +147,10 @@
         {
           "RelationType": "HasReference",
           "RelatedClassUri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcBuiltElement"
+        },
+        {
+          "RelationType": "HasReference",
+          "RelatedClassUri": "https://identifier.buildingsmart.org/uri/bw/LM/0.1.2/class/Measurement"
         }
       ]
     },
@@ -595,7 +621,8 @@
       "Name": "Strain",
       "Definition": "Strain is the response of a system to an applied stress.",
       "CreatorLanguageIsoCode": "EN",
-      "DataType": "Real"
+      "DataType": "String",
+      "Example": "[strain, uncertainty, timestamp]"
     },
     {
       "Code": "temperature",
